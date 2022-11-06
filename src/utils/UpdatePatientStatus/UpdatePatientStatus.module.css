@@ -1,0 +1,10 @@
+.outerContainer {
+  width: 100rem;
+  max-width: 80%;
+  border-radius: 2rem;
+  /* height: 50rem; */
+  padding: 2rem;
+  background: var(--color-grey-light-2);
+  margin: 3rem auto;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}

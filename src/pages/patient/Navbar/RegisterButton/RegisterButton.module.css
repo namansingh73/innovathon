@@ -1,0 +1,19 @@
+.btn {
+  font-size: 1.85rem;
+  padding: 1rem 2rem;
+}
+
+/* 980px / 16 = 61.25em */
+@media screen and (max-width: 61.25em) {
+  .btn {
+    margin-right: 5.5rem;
+    margin-top: 1rem;
+  }
+}
+
+/* 500px / 16 = 31.25em */
+@media screen and (max-width: 31.25em) {
+  .btn {
+    display: none;
+  }
+}

@@ -1,0 +1,37 @@
+.image {
+  filter: contrast(120%);
+  cursor: pointer;
+  width: 8rem;
+  height: auto;
+  margin-right: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* 500 / 16 = 31.25em */
+@media screen and (max-width: 31.25em) {
+  .image {
+    width: 8rem;
+  }
+}
+
+.logoContainer {
+  display: flex;
+}
+
+.logoHeading {
+  z-index: 5;
+  margin-top: 4rem;
+  color: var(--color-grey-dark-1);
+  margin-left: -1rem;
+}
+
+/* 500 / 16 = 31.25em */
+@media screen and (max-width: 31.25em) {
+  .logoHeading {
+    margin-top: 3rem;
+  }
+}
+
+.blueHeading {
+  color: var(--color-blue);
+}
