@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Input from "../../utils/Input/Input";
-import Button from "../../utils/Button/Button";
-import styles from "./LocationForm.module.css";
+import Input from "../Input/Input";
+import Button from "../Button/Button";
+import styles from "./OperatorLocationForm.module.css";
 
 const LocationForm = () => {
   const [Id, setId] = useState("");
   const navigate = useNavigate();
   const submitHandler = async (event) => {
     event.preventDefault();
-    navigate(`/patient/track/${Id}`);
+    navigate(`/operator/track/${Id}`);
   };
 
   return (

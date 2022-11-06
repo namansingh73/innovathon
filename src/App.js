@@ -10,6 +10,7 @@ import Home from "./components/Patient/Home/Home";
 import Events from "./components/Hospital/Events/Events";
 import TrackPatient from "./components/Operator/TrackPatient/TrackPatient";
 import TrackAmbulanceByPatient from "./components/Patient/TrackAmbulance/TrackAmbulance";
+import UpdateLocation from "./components/Operator/UpdateLocation/UpdateLocation";
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
         <Route path="/hospital/events" exact element={<Events />} />
         <Route path="/operator" exact element={<Operator />} />
         <Route path="/operator/status" exact element={<UpdateStatus />} />
-        <Route path="/operator/track" exact element={<TrackPatient />} />
+        <Route path="/operator/track/" exact element={<UpdateLocation />} />
+        <Route path="/operator/track/:id" exact element={<TrackPatient />} />
         <Route path="/patient" exact element={<Patient />} />
         <Route path="/patient/home" exact element={<Home />} />
         <Route

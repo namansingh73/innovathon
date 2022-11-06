@@ -9,12 +9,12 @@ const NavbarLinks = (props) => {
       }`}
     >
       <NavbarLink
-        listItem="Home"
+        listItem="Track Ambulance"
         href="/patient/home"
         closeNavbar={props.closeNavbar}
       />
       <NavbarLink
-        listItem="Track Ambulance"
+        listItem="About"
         href="#about"
         closeNavbar={props.closeNavbar}
       />
