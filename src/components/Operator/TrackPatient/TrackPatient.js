@@ -1,10 +1,10 @@
 import React from "react";
-import Navbar from "../../../pages/hospital/Navbar/Navbar";
+import Navbar from "../../../pages/operator/Navbar/Navbar";
 import Mapbox from "../../../utils/HospitalTracking/Mapbox";
 import "mapbox-gl/dist/mapbox-gl.css";
-import styles from "./TrackAmbulance.module.css";
+import styles from "./TrackPatient.module.css";
 
-const TrackAmbulance = () => {
+const TrackPatient = () => {
   return (
     <div className={styles.mapContainer}>
       <Navbar />
@@ -13,4 +13,4 @@ const TrackAmbulance = () => {
   );
 };
 
-export default TrackAmbulance;
+export default TrackPatient;

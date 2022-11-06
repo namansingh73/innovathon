@@ -14,7 +14,7 @@ const NavbarLinks = (props) => {
         closeNavbar={props.closeNavbar}
       />
       <NavbarLink
-        listItem="About Us"
+        listItem="Track Ambulance"
         href="#about"
         closeNavbar={props.closeNavbar}
       />

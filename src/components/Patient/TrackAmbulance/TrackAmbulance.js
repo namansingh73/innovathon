@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "../../../pages/hospital/Navbar/Navbar";
-import Mapbox from "../../../utils/HospitalTracking/Mapbox";
+import Mapbox from "../../../utils/PatientTracking/Mapbox";
 import "mapbox-gl/dist/mapbox-gl.css";
 import styles from "./TrackAmbulance.module.css";
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import supabase from "../../supabase/subabase";
@@ -15,12 +15,58 @@ import Map, {
 
 const MapBox = () => {
   const map = useRef(null);
-  const [center, setCenter] = React.useState({ lat: 0, lng: 0 });
-  const [ambulances, setAmbulances] = React.useState(null);
+  const [center, setCenter] = useState({ lat: 0, lng: 0 });
+  const [ambulances, setAmbulances] = useState(null);
+  const [currentLoc, setCurrentLoc] = useState({ lat: 0, lng: 0 });
 
-  // useEffect(() => {
-  //   map.current?.resize();
-  // }, [map.current]);
+  useEffect(() => {
+    const options = {
+      enableHighAccuracy: true,
+      timeout: 5000,
+      maximumAge: 0,
+    };
+
+    async function success(pos) {
+      const crd = pos.coords;
+      const coordinates = {
+        latitude: crd.latitude,
+        longitude: crd.longitude,
+      };
+      setCurrentLoc({
+        lat: coordinates.latitude,
+        lng: coordinates.longitude,
+      });
+    }
+
+    function error(err) {
+      console.warn(`ERROR(${err.code}): ${err.message}`);
+    }
+
+    const id = navigator.geolocation.watchPosition(success, error, options);
+
+    return () => {
+      navigator.geolocation.clearWatch(id);
+    };
+  }, []);
+
+  function getDistanceFromLatLonInM(lat1, lon1, lat2, lon2) {
+    const R = 6371; // Radius of the earth in km
+    const dLat = deg2rad(lat2 - lat1); // deg2rad below
+    const dLon = deg2rad(lon2 - lon1);
+    const a =
+      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos(deg2rad(lat1)) *
+        Math.cos(deg2rad(lat2)) *
+        Math.sin(dLon / 2) *
+        Math.sin(dLon / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    const d = R * c; // Distance in km
+    return parseInt(d);
+  }
+
+  function deg2rad(deg) {
+    return deg * (Math.PI / 180);
+  }
 
   const getAmbulances = async () => {
     const patientInfo = await supabase.from("operator").select("*");
@@ -83,6 +129,16 @@ const MapBox = () => {
           showZoom={true}
           position="bottom-left"
         />
+        <Marker longitude={currentLoc.lng} latitude={currentLoc.lat}>
+          <img src="https://res.cloudinary.com/dnzuzshzs/image/upload/v1667763676/innovathon/location-removebg-preview_1_l3nv3u.png" />
+        </Marker>
+        <Popup
+          longitude={currentLoc.lng}
+          latitude={currentLoc.lat}
+          anchor="top-left"
+        >
+          You are here
+        </Popup>
         {ambulances &&
           ambulances.map((p) => (
             <Marker
@@ -103,7 +159,25 @@ const MapBox = () => {
             >
               <b>ID:</b> {p.id} &nbsp; <b>Name: </b> {p.name}
               <br />
-              <b>ETA:</b> {p.eta} &nbsp; <b>Dist: </b> {p.distance}
+              <b>ETA:</b>{" "}
+              {parseInt(
+                (getDistanceFromLatLonInM(
+                  currentLoc.lat,
+                  currentLoc.lng,
+                  p.coordinates.latitude,
+                  p.coordinates.longitude
+                ) *
+                  120) /
+                  35
+              )}{" "}
+              mins &nbsp; <b>Dist: </b>{" "}
+              {getDistanceFromLatLonInM(
+                currentLoc.lat,
+                currentLoc.lng,
+                p.coordinates.latitude,
+                p.coordinates.longitude
+              ) * 1.5}{" "}
+              km
             </Popup>
           ))}
       </Map>
