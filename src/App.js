@@ -13,11 +13,13 @@ import TrackAmbulanceByPatient from "./components/Patient/TrackAmbulance/TrackAm
 import UpdateLocation from "./components/Operator/UpdateLocation/UpdateLocation";
 import ViewEvents from "./components/Patient/Events/ViewEvents";
 import ChecklistMain from "./components/Patient/ChecklistMain/ChecklistMain";
+import { Navigate } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
       <Routes>
+        <Route path="/" exact element={<Navigate to="/hospital" />} />
         <Route path="/hospital" exact element={<Hospital />} />
         <Route path="/hospital/status" exact element={<PatientStatus />} />
         <Route path="/hospital/track" exact element={<TrackAmbulance />} />
