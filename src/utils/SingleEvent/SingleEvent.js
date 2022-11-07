@@ -1,19 +1,10 @@
 import React from "react";
-import styles from "./PatientStatus.module.css";
+import styles from "./SingleEvent.module.css";
 // import Button from "../../../utils/Button/Button";
 import PatientLogo from "../Images/patient.jpg";
 
-const PatientStatus = (props) => {
-  const { id, name, age, riskFactor, note, gender } = props.patient;
-  let riskVar = styles.high;
-  let riskIcon = "fas fa-radiation-alt";
-  if (riskFactor === "Low") {
-    riskVar = styles.low;
-    riskIcon = "fas fa-check";
-  } else if (riskFactor === "Medium") {
-    riskVar = styles.medium;
-    riskIcon = "fas fa-exclamation-triangle";
-  }
+const SingleEvent = (props) => {
+  const { id, title, date, timing, note, venue } = props.event;
 
   return (
     <div className={styles.outerContainer}>
@@ -21,21 +12,12 @@ const PatientStatus = (props) => {
         <img src={PatientLogo} alt="..." className={styles.companyImg} />
         <div className={styles.innerContainer}>
           <div className={styles.nameMottoCnt}>
-            <span className={styles.companyName}>ID: {id}</span>
-            <span className={styles.companyMoto}>Name: {name}</span>
-            <span className={styles.companyMoto}>Age: {age}</span>
-            <span className={styles.companyEmployeesCnt}>
-              Gender: <i className="fas fa-male"></i> {gender}
+            <span className={styles.companyName}>Title: {title}</span>
+            <span className={styles.companyMoto}>
+              Date / Time: {date} / {timing}
             </span>
-          </div>
-          <div className={styles.jobStatusOuter}>
-            <span className={`${styles.jobStatus} ${riskVar}`}>
-              <span className={styles.jobStatusCircle}>
-                <i className={riskIcon}></i>
-              </span>
-              <span className={styles.jobStatusText}>
-                Risk Factor: {riskFactor}
-              </span>
+            <span className={styles.companyEmployeesCnt}>
+              Venue: <i className="fas fa-male"></i> {venue}
             </span>
           </div>
         </div>
@@ -73,4 +55,4 @@ const PatientStatus = (props) => {
   );
 };
 
-export default PatientStatus;
+export default SingleEvent;

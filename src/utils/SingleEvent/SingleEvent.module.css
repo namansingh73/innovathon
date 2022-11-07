@@ -1,0 +1,120 @@
+.outerContainer {
+  margin: 3rem auto;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  width: 100rem;
+  max-width: 80%;
+  background-color: var(--color-grey-light-1);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.innerContainer {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.companyImg {
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+  border: 2px solid var(--color-grey-light-3);
+}
+
+.jobStatusOuter {
+  margin-left: 2rem;
+}
+
+.companyEmployeesCnt {
+  font-size: 1.4rem;
+  color: var(--color-grey-dark-2);
+}
+
+.companyInfo {
+  display: flex;
+  align-items: flex-start;
+}
+
+.nameMottoCnt {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2rem;
+}
+
+.companyMoto {
+  font-size: 1.4rem;
+}
+
+.companyName {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.low {
+  background-color: rgb(209, 294, 204);
+  color: rgb(15, 81, 50);
+}
+
+.medium {
+  background-color: rgb(255, 213, 128);
+}
+
+.high {
+  background-color: rgb(250, 128, 114);
+}
+
+.jobStatus {
+  font-size: 1.3rem;
+  display: inline-flex;
+  padding: 0.3rem 1.2rem 0.3rem 0.8rem;
+  border-radius: 5rem;
+  margin: 2rem 0 1rem 0;
+  align-items: center;
+}
+
+.jobStatusCircle {
+  display: inline-flex;
+  width: 1.7rem;
+  height: 1.7rem;
+  background-color: black;
+  color: var(--color-white);
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 1rem;
+  margin-right: 0.8rem;
+}
+
+.jobDescriptionApplication {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 2px solid var(--color-grey-light-3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.jobDescription,
+.saveApply {
+  display: flex;
+  align-items: center;
+}
+
+.role {
+  font-weight: 600;
+}
+
+.location {
+  margin-left: 2rem;
+  margin-right: 1rem;
+}
+
+.postedDate {
+  color: #0c7134;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.btn {
+  margin-left: 1rem;
+}
