@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Input from "../../utils/Input/Input";
 import Button from "../../utils/Button/Button";
 import styles from "./UpdateForm.module.css";
-import RowRadioButtonsGroup from "../RadioButton/RadioButton";
+import RadioButton from "../RadioButton/RadioButton";
 import supabase from "../../supabase/subabase";
 
 const UpdateForm = () => {
@@ -12,7 +12,7 @@ const UpdateForm = () => {
   const submitHandler = async (event) => {
     event.preventDefault();
     const patient = await supabase
-      .from("patients")
+      .from("operator")
       .update({ note, riskFactor: risk })
       .eq("id", Id);
   };
@@ -40,7 +40,7 @@ const UpdateForm = () => {
         onChange={(event) => setNote(event.target.value)}
         value={note}
       />
-      <RowRadioButtonsGroup setRisk={setRisk} />
+      <RadioButton setRisk={setRisk} />
       <Button className={styles.classLinkBtn} rounded fullWidth>
         Send Update
       </Button>

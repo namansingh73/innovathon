@@ -8,7 +8,7 @@ const PatientSummary = () => {
   const [patients, setPatients] = useState(null);
   useEffect(() => {
     const getPatients = async () => {
-      const { data } = await supabase.from("patients").select("*");
+      const { data } = await supabase.from("operator").select("*");
       setPatients(data);
     };
     getPatients();

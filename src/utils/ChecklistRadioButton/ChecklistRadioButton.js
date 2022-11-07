@@ -5,13 +5,12 @@ import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
 import FormLabel from "@mui/material/FormLabel";
-import styles from "./RadioButton.module.css";
+import styles from "./ChecklistRadioButton.module.css";
 
-const RadioButton = (props) => {
+const ChecklistRadioButton = (props) => {
   const [value, setValue] = useState("");
   const handleChange = (event) => {
     setValue(event.target.value);
-    props.setRisk(event.target.value);
   };
   return (
     <div className={styles.formControl}>
@@ -19,9 +18,7 @@ const RadioButton = (props) => {
         <FormLabel
           id="demo-row-radio-buttons-group-label"
           className={styles.formLabel}
-        >
-          Risk Factor*
-        </FormLabel>
+        ></FormLabel>
         <RadioGroup
           row
           aria-labelledby="demo-row-radio-buttons-group-label"
@@ -30,7 +27,7 @@ const RadioButton = (props) => {
           onChange={handleChange}
         >
           <FormControlLabel
-            value="Low"
+            value="Yes"
             control={
               <Radio
                 sx={{
@@ -40,10 +37,10 @@ const RadioButton = (props) => {
                 }}
               />
             }
-            label={<span className={styles.formLabel}>Low</span>}
+            label={<span className={styles.formLabel}>Yes</span>}
           />
           <FormControlLabel
-            value="Medium"
+            value="No"
             control={
               <Radio
                 sx={{
@@ -53,20 +50,7 @@ const RadioButton = (props) => {
                 }}
               />
             }
-            label={<span className={styles.formLabel}>Medium</span>}
-          />
-          <FormControlLabel
-            value="High"
-            control={
-              <Radio
-                sx={{
-                  "& .MuiSvgIcon-root": {
-                    fontSize: 24,
-                  },
-                }}
-              />
-            }
-            label={<span className={styles.formLabel}>High</span>}
+            label={<span className={styles.formLabel}>No</span>}
           />
         </RadioGroup>
       </FormControl>
@@ -74,4 +58,4 @@ const RadioButton = (props) => {
   );
 };
 
-export default RadioButton;
+export default ChecklistRadioButton;
