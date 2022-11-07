@@ -103,10 +103,6 @@ const MapBox = () => {
       );
       getAmbulances();
     }
-    return () => {
-      map.current?.resize();
-      // navigator.geolocation.getCurrentPosition(success, error, options);
-    };
   }, [center]);
 
   return (
