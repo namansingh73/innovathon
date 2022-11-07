@@ -12,6 +12,7 @@ import TrackPatient from "./components/Operator/TrackPatient/TrackPatient";
 import TrackAmbulanceByPatient from "./components/Patient/TrackAmbulance/TrackAmbulance";
 import UpdateLocation from "./components/Operator/UpdateLocation/UpdateLocation";
 import ViewEvents from "./components/Patient/Events/ViewEvents";
+import Checklist from "./components/Patient/Checklist/Checklist";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="/patient" exact element={<Patient />} />
         <Route path="/patient/home" exact element={<Home />} />
         <Route path="/patient/events" exact element={<ViewEvents />} />
+        <Route path="/patient/checklist" exact element={<Checklist />} />
         <Route
           path="/patient/track/:id"
           exact

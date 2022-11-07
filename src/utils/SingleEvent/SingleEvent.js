@@ -4,7 +4,7 @@ import styles from "./SingleEvent.module.css";
 import PatientLogo from "../Images/patient.jpg";
 
 const SingleEvent = (props) => {
-  const { id, title, date, timing, note, venue } = props.event;
+  const { title, date, timing, note, venue } = props.event;
 
   return (
     <div className={styles.outerContainer}>
@@ -13,9 +13,8 @@ const SingleEvent = (props) => {
         <div className={styles.innerContainer}>
           <div className={styles.nameMottoCnt}>
             <span className={styles.companyName}>Title: {title}</span>
-            <span className={styles.companyMoto}>
-              Date / Time: {date} / {timing}
-            </span>
+            <span className={styles.companyMoto}>Date: {date}</span>
+            <span className={styles.companyMoto}>Time: {timing}</span>
             <span className={styles.companyEmployeesCnt}>
               Venue: <i className="fas fa-male"></i> {venue}
             </span>

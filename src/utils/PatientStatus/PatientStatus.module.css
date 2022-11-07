@@ -2,8 +2,8 @@
   margin: 3rem auto;
   border-radius: 0.5rem;
   padding: 1.5rem;
-  width: 100rem;
-  max-width: 80%;
+  width: 95%;
+  max-width: 80rem;
   background-color: var(--color-grey-light-1);
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
@@ -14,6 +14,12 @@
   justify-content: space-between;
 }
 
+@media screen and (max-width: 36em) {
+  .innerContainer {
+    flex-direction: column;
+  }
+}
+
 .companyImg {
   border-radius: 50%;
   width: 5rem;
@@ -21,8 +27,21 @@
   border: 2px solid var(--color-grey-light-3);
 }
 
+@media screen and (max-width: 36em) {
+  .companyImg {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+}
+
 .jobStatusOuter {
   margin-left: 2rem;
+}
+
+@media screen and (max-width: 36em) {
+  .jobStatusOuter {
+    transform: translateX(-1rem);
+  }
 }
 
 .companyEmployeesCnt {
@@ -92,6 +111,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+@media screen and (max-width: 36em) {
+  .jobDescriptionApplication {
+    font-size: 1.4rem;
+  }
 }
 
 .jobDescription,
