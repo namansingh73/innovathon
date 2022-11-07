@@ -23,11 +23,6 @@ const NavbarLinks = (props) => {
         href="/patient/checklist"
         closeNavbar={props.closeNavbar}
       />
-      <NavbarLink
-        listItem="Contact Us"
-        href="#contact"
-        closeNavbar={props.closeNavbar}
-      />
     </ul>
   );
 };

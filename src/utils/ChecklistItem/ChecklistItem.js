@@ -13,15 +13,16 @@ const ChecklistItem = (props) => {
         <div className={styles.innerContainer}>
           <div className={styles.nameMottoCnt}>
             <span className={styles.companyName}>{props.text}</span>
+            <span className={styles.companyName}>{props.secondText}</span>
           </div>
           <img
             src={props.imageIcon}
             alt="iconImage"
             className={styles.checklistIcon}
           />
-          <ChecklistRadioButton />
         </div>
       </div>
+      <ChecklistRadioButton yes={props.yes} no={props.no} />
     </div>
   );
 };

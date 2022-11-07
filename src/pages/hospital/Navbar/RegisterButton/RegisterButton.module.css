@@ -1,6 +1,7 @@
 .btn {
   font-size: 1.85rem;
   padding: 1rem 2rem;
+  visibility: hidden;
 }
 
 /* 980px / 16 = 61.25em */

@@ -7,9 +7,7 @@ const Logo = () => {
       <span>
         <img src={logo} alt="logo" className={styles.image} />
       </span>
-      <h3 className={styles.logoHeading}>
-        Saha<span className={styles.blueHeading}>yak</span>
-      </h3>
+      <h3 className={styles.logoHeading}>Sahayak</h3>
     </div>
   );
 };

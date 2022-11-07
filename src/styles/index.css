@@ -84,3 +84,12 @@ textarea {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   background-color: var(--color-grey-dark-4);
 }
+
+.MuiFormControlLabel-root.MuiFormControlLabel-labelPlacementEnd {
+  align-items: flex-start !important;
+  margin: 0.75rem 0 !important;
+}
+
+.MuiButtonBase-root.MuiRadio-root {
+  padding-top: 0 !important;
+}

@@ -37,7 +37,7 @@ const ChecklistRadioButton = (props) => {
                 }}
               />
             }
-            label={<span className={styles.formLabel}>Yes</span>}
+            label={<span className={styles.formLabel}>{props.yes}</span>}
           />
           <FormControlLabel
             value="No"
@@ -50,7 +50,7 @@ const ChecklistRadioButton = (props) => {
                 }}
               />
             }
-            label={<span className={styles.formLabel}>No</span>}
+            label={<span className={styles.formLabel}>{props.no} </span>}
           />
         </RadioGroup>
       </FormControl>

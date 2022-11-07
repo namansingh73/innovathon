@@ -18,16 +18,6 @@ const NavbarLinks = (props) => {
         href="/operator/track"
         closeNavbar={props.closeNavbar}
       />
-      <NavbarLink
-        listItem="Masterplan"
-        href="#masterplan"
-        closeNavbar={props.closeNavbar}
-      />
-      <NavbarLink
-        listItem="Contact Us"
-        href="#contact"
-        closeNavbar={props.closeNavbar}
-      />
     </ul>
   );
 };
