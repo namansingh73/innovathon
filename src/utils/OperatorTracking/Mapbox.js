@@ -42,7 +42,7 @@ const MapBox = () => {
         longitude: crd.longitude,
       };
       const patient = await supabase
-        .from("patients")
+        .from("operator")
         .update({ coordinates })
         .eq("id", params.id);
 
